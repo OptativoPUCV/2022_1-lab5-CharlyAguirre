@@ -193,12 +193,15 @@ Pair * nextTreeMap(TreeMap * tree)
 
   auxNode = tree->current;
 
-  if(tree->current->right != NULL)
+  /*if(tree->current->right != NULL)
   {
-    auxNode = tree->current->right;
-    auxPair = tree->current->pair;
-    return auxPair;
-  }
+    tree->current = tree->current->right;
+    while(tree->current->left != NULL)
+    {
+      tree->current = tree->current->left;
+    }
+    return tree->current->pair;
+  }*/
   
   while(auxNode != NULL)
   {
