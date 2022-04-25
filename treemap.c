@@ -150,12 +150,20 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 
 Pair * upperBound(TreeMap * tree, void* key) 
 {
-    return NULL;
+  
+  return NULL;
 }
 
 Pair * firstTreeMap(TreeMap * tree) 
 {
-    return NULL;
+  TreeNode * auxNode;
+  Pair * auxPair;
+  
+  auxNode = minimum(tree->root);
+
+  auxPair = auxNode->pair;
+  
+  return auxPair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) 
