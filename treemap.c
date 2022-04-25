@@ -168,5 +168,42 @@ Pair * firstTreeMap(TreeMap * tree)
 
 Pair * nextTreeMap(TreeMap * tree) 
 {
-    return NULL;
+  TreeNode * auxNode;
+  Pair * auxPair;
+
+  auxNode = tree->current;
+
+  if(tree->current->right != NULL)
+  {
+    auxNode = tree->current->right;
+    auxPair = tree->current->pair;
+    return auxPair;
+  }
+  
+  while(auxNode != NULL)
+  {
+    if(tree->current->parent != NULL)
+    {
+      tree->current = tree->current->parent;
+    }
+
+    if(auxNode != tree->current && tree->current->right != NULL && auxNode != tree->current->right)
+    {
+      tree->current = tree->current->right;
+    }
+
+    while(auxNode != tree->current && tree->current->left != NULL && auxNode != tree->current->left)
+    {
+      tree->current = tree->current->left;
+      if(tree->current->left == NULL)
+      {
+        auxPair = tree->current->pair;
+
+        return auxPair;
+      }
+    }
+  }
+
+
+  return NULL;
 }
