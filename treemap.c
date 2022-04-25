@@ -153,7 +153,6 @@ Pair * searchTreeMap(TreeMap * tree, void* key)
 Pair * upperBound(TreeMap * tree, void* key) 
 {
   Pair * auxPair;
-  TreeNode * aux = tree->root;
 
   auxPair = searchTreeMap(tree,key);
 
